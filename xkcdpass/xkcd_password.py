@@ -12,6 +12,7 @@ import re
 import sys
 
 from io import open
+from random import randint
 
 __LICENSE__ = """
 Copyright (c) 2011 - 2018, Steven Tobin and Contributors.
@@ -323,7 +324,7 @@ def generate_xkcdpassword(wordlist,
         else:
             words = find_acrostic(acrostic, worddict)
 
-        return delimiter.join(set_case(words, method=case))
+        return delimiter.join(set_case(words, method=case)) + str(randint(10, 50))
 
     # useful if driving the logic from other code
     if not interactive:
